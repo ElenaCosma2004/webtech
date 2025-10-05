@@ -1,11 +1,8 @@
-var http = require("http");
+const express = require("express");
 
-//create a server object:
-http
-  .createServer(function (req, res) {
-    res.write("Hello Web!"); //write a response to the client
-    res.end(); //end the response
-  })
-  .listen(8080, () => {
-    console.log("Server running at http://localhost:8080/");
-  });
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
+app.listen(8080);
