@@ -1,14 +1,19 @@
-const checkPrime = (n) => {
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (!(n % i)) {
-      return false;
-    }
+const letterFreq = (text) => {
+  const letterText = text
+    .toLowerCase()
+    .split("")
+    .filter((ch) => ch !== " ");
+
+  const result = {};
+  for (let char of letterText) {
+    if (char in result) {
+      result[char]++;
+    } else result[char] = 1;
   }
-  return false;
+  for (let char in result) {
+    result[char] = result[char] / letterText.length;
+  }
+  return result;
 };
 
-if (process.argv.length < 3) {
-  console.log("not enough params ");
-} else {
-  console.log(checkPrime(parseInt(process.argv[2])));
-}
+console.log(letterFreq("Ana are mere"));
