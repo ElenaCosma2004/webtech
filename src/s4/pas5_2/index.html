@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      window.onload = () => {
+        const form = document.getElementById("contactForm");
+        const tableBody = document.getElementById("contactsBody");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+
+          const row = document.createElement("tr");
+          const nameCell = document.createElement("td");
+          const phoneCell = document.createElement("td");
+
+          nameCell.textContent = name;
+          phoneCell.textContent = phone;
+
+          row.appendChild(nameCell);
+          row.appendChild(phoneCell);
+          tableBody.appendChild(row);
+
+          document.getElementById("name").value = "";
+          document.getElementById("phone").value = ""; // empty the inputs
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Nume" />
+      <input type="text" id="phone" placeholder="Telefon" />
+      <button type="submit">Adauga contact</button>
+    </form>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nume</th>
+          <th>Telefon</th>
+        </tr>
+      </thead>
+      <tbody id="contactsBody"></tbody>
+    </table>
+  </body>
+</html>

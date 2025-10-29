@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      window.onload = () => {
+        const button = document.getElementById("myBtn");
+
+        const myEvent = new Event("myEvt");
+        const clickHandler = () => {
+          document.dispatchEvent(myEvent);
+          console.log("Butonul a fost apasat");
+        };
+
+        const myEvtHandler = () => {
+          console.log("butonul a fost apasat");
+        };
+        button.onclick = clickHandler;
+
+        //metoda 2->prin care putem specifica mai multe event handlers pe acelasi event
+        //button.addEventListener("click", clickHandler);
+
+        //pt event 2
+        document.addEventListener("myEvt", myEvtHandler);
+      };
+    </script>
+  </head>
+  <body>
+    <button id="myBtn">Click me!</button>
+  </body>
+</html>

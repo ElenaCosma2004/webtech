@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Input + Eveniment Custom</title>
+    <script>
+      window.onload = () => {
+        const input = document.getElementById("myInput");
+        const output = document.getElementById("output");
+
+        input.addEventListener("input", (event) => {
+          console.log("Eveniment nativ: input");
+
+          const customEv = new CustomEvent("textChanged", {
+            detail: { value: event.target.value },
+          });
+          input.dispatchEvent(customEv);
+        });
+
+        input.addEventListener("textChanged", (event) => {
+          console.log("Eveniment custom: textChanged");
+          console.log("Text introdus:", event.detail.value);
+
+          output.textContent = `Ai scris: ${event.detail.value}`;
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <input id="myInput" placeholder="Write something.." />
+    <p id="output"></p>
+  </body>
+</html>
