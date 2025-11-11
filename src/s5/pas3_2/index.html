@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabel colorat</title>
+  </head>
+  <body>
+    <table border="1" cellpadding="8">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Faculty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ionut</td>
+          <td>ASE</td>
+        </tr>
+        <tr>
+          <td>Mihaela</td>
+          <td>Politie</td>
+        </tr>
+        <tr>
+          <td>Alex</td>
+          <td>Secretar</td>
+        </tr>
+        <tr>
+          <td>Ioana</td>
+          <td>Poli</td>
+        </tr>
+        <tr>
+          <td>Mihaita</td>
+          <td>Bibliotecar</td>
+        </tr>
+        <tr>
+          <td>Denis</td>
+          <td>Politie</td>
+        </tr>
+        <tr>
+          <td>Marcel</td>
+          <td>Pompieri</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      let rows = document.querySelectorAll("tbody tr");
+
+      if (rows.length > 0) {
+        rows[0].bgColor = "blue";
+        rows[0].style.color = "white";
+
+        rows[rows.length - 1].bgColor = "green";
+        rows[rows.length - 1].style.color = "white";
+
+        for (let i = 1; i < rows.length - 1; i++) {
+          if (i % 2 === 1) {
+            rows[i].bgColor = "violet";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

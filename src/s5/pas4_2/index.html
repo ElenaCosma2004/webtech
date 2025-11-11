@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        text-align: center;
+        margin-top: 50px;
+      }
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .container {
+        width: 306px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+      .square {
+        width: 100px;
+        height: 100px;
+        float: left;
+        border: 1px solid #999;
+        box-sizing: border-box;
+        background-color: #fdfdfd;
+        transition: background 0.2s;
+      }
+
+      .square:hover {
+        background-color: #f0f0f0;
+      }
+
+      .row::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="top left square"></div>
+        <div class="top middle square"></div>
+        <div class="top right square"></div>
+      </div>
+      <div class="row">
+        <div class="top left square"></div>
+        <div class="top middle square"></div>
+        <div class="top right square"></div>
+      </div>
+      <div class="row">
+        <div class="top left square"></div>
+        <div class="top middle square"></div>
+        <div class="top right square"></div>
+      </div>
+    </div>
+  </body>
+</html>

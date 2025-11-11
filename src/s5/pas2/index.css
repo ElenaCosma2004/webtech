@@ -1,0 +1,31 @@
+.btn:hover {
+  color: blue;
+}
+
+input:focus {
+  background-color: yellow;
+}
+
+input:required {
+  background-color: red;
+}
+p::first-line {
+  font: size 120%;
+  font-weight: bold;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 2px solid gray;
+  background-color: white;
+  cursor: pointer;
+  vertical-align: middle;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.custom-checkbox:checked {
+  background-color: blue;
+  border-color: red;
+}
