@@ -1,0 +1,10 @@
+import { useNavigate } from "react-router";
+
+const About = () => {
+  return (
+    <>
+      <p>About</p>
+    </>
+  );
+};
+export default About;
